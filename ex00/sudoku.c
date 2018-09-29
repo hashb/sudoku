@@ -6,7 +6,7 @@
 /*   By: smoissel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 11:19:24 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 11:21:04 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ struct Sudoku()
 	int 	x;
 	int 	y;
 };
-
-int 	is_valide(struct Sudoku)
-{
-	return (0);
-}
-
 
 int 	is_valide_line(char *ligneN)
 {
