@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   sudoku.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smoissel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 11:21:04 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 12:04:17 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-struct Sudoku()
+struct Sudoku
 {	/* It contains the current value for each case. */
-	int 	x;
-	int 	y;
+	int 	x[9];
+	int 	y[9];
 };
 
 int 	is_valide_line(char *ligneN)
