@@ -6,12 +6,11 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:09:16 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/30 00:40:22 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
+#include "sudoku.h"
 
 void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
 {
