@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 20:42:53 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 20:49:14 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int 	solver(struct Sudoku S)
 					result += solver(S);
 					test_value++;
 				}
+				return (result);
 			}
 		}
 	}
