@@ -6,14 +6,14 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 20:49:14 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 20:56:26 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int 	solver(struct Sudoku S)
-{	
+int 	solver(struct Sudoku S, int max_search)
+{	/* Will return the number of solvable sudokus for one grid */
 	int 	y;
 	int 	x;
 	int 	test_value;
@@ -34,7 +34,9 @@ int 	solver(struct Sudoku S)
 				while (test_value != 9)
 				{
 					S.point[x][y] = test_value;
-					result += solver(S);
+					result += solver(S, max_search);
+					if (result >= max_search)
+						return (result);
 					test_value++;
 				}
 				return (result);
@@ -43,11 +45,7 @@ int 	solver(struct Sudoku S)
 	}
 	return (result);
 }
-
-int 	is_valide(struct Sudoku S)
+int 	check(struct Sudoku S)
 {
-	/* Return 1 only if the number of solutions of a given sudoku is equal to 1, 0 otherwise. */
-	if (solver(S) != 1)
-		return (0);
-	return (1);
+	return (0);
 }
