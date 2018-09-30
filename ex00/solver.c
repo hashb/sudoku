@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:41:29 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 22:01:13 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,11 @@ int 	solver(int S[9][9], int max_search)
 			}
 		}
 	}
+	if (result == 0 && check(S))
+		result += 1;
 	return (result);
 }
+
 
 void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
 {
@@ -74,13 +77,4 @@ void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
         }
         i++;
     }
-}
-int 	main(int argc, char **argv)
-{
-	int 	sudoku_grid[9][9];
-	int 	result;
-
-	ft_read_sudoku(sudoku_grid, argv);
-	result = solver(sudoku_grid, 2);
-	return (result);
 }

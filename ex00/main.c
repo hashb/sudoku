@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:30:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:17:55 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 22:04:55 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
 int 	main(int argc, char **argv)
 {
 	int 	sudoku_grid[9][9];
+	int 	result;
+
 	ft_read_sudoku(sudoku_grid, argv);
-	
+	result = solver(sudoku_grid, 2);
+	return (result);
 }
 
