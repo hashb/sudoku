@@ -6,12 +6,9 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 20:06:25 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 21:09:16 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -21,13 +18,11 @@ void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
     int i;
     int j;
     char *str;
-    // int **sudoku_grid = (int **)malloc(9 * sizeof(int *));
 
     i = 1;
     while (i <= 9)
     {
         j = 0;
-        // sudoku_grid[i] = (int *)malloc(sizeof(int) * 9);
         str = argv[i];
         while (*str)
         {
@@ -40,7 +35,6 @@ void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
         }
         i++;
     }
-    // return (sudoku_grid);
 }
 
 void	ft_print_line(int *line)
@@ -71,27 +65,3 @@ void	ft_print_sudoku(int sudoku_grid[9][9])
     }
     return ;
 }
-
-/*
-int 	is_valide_line(char *ligneN)
-{
-	int 	nbr_count[9];
-	int 	i;
-	int 	j;
-
-	i = 0;
-	j = 0;
-	while (ligneN[i] != '\0')
-	{
-		while (ligneN[j] != '\0')
-		{
-			if (ligneN[i] == ligneN[j] && ligneN[i] != '.')
-				return (0);
-			j++;
-		}
-		j = 0;
-		i++;
-	}
-	return (1);
-}
-*/
