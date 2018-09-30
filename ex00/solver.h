@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 21:45:20 by kchenna           #+#    #+#             */
-/*   Updated: 2018/09/29 23:35:27 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 23:57:21 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,10 @@ int		ft_check_3x3(struct coord idx, int sudoku_grid[9][9])
 		while (j < 3)
 		{
 			val = sudoku_grid[i][j++];
-			if (val == 0)
-				continue;
 			if (check[val] == -1)
 				return (0);
-			check[val] = -1;
+			else if (val != 0)
+				check[val] = -1;
 		}
 		i++;
 	}
@@ -73,11 +72,10 @@ int		ft_check_row(struct coord idx, int sudoku_grid[9][9])
 	while (j < 9)
 	{
 		val = sudoku_grid[i][j];
-		if (val == 0)
-			continue;
 		if (check[val] == -1)
 			return (0);
-		check[val] = -1;
+		else if (val != 0)
+			check[val] = -1;
 		j++;
 	}
 	return (1);
@@ -100,7 +98,8 @@ int		ft_check_col(struct coord idx, int sudoku_grid[9][9])
 		val = sudoku_grid[i][j];
 		if (check[val] == -1)
 			return (0);
-		check[val] = -1;
+		else if (val != 0)
+			check[val] = -1;
 		i++;
 	}
 	return (1);

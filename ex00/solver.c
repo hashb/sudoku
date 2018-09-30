@@ -6,11 +6,13 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 22:31:16 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/30 00:23:03 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solver.h"
+#include "lib_sudoku.h"
+#include <stdio.h>
 
 // int 	solver(struct Sudoku S)
 // {
@@ -45,10 +47,27 @@
 
 int		ft_is_valid(int sudoku_grid[9][9])
 {
-	int is_valid;
+	// int is_valid;
 
-	is_valid = 0;
-	if (**sudoku_grid)
+	// is_valid = 0;
+	// if (**sudoku_grid)
+	// 	return (1);
+	// return (1);
+	struct coord idx;
+	idx.x = 0;
+	idx.y = 0;
+	if (ft_check_3x3(idx, sudoku_grid) && ft_check_col(idx, sudoku_grid) && ft_check_row(idx, sudoku_grid))
 		return (1);
-	return (1);
+	return (0);
+}
+
+int main(int argc, char **argv)
+{
+	if (argc > 1000)
+		return (0);
+	int sudoku_grid[9][9];
+	ft_read_sudoku(sudoku_grid, argv);
+	ft_print_sudoku(sudoku_grid);
+	printf("is valid %i", ft_is_valid(sudoku_grid));
+
 }
