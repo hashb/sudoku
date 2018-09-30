@@ -6,54 +6,54 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/30 00:39:57 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/30 01:40:02 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solver.h"
-// int 	solver(struct Sudoku S)
-// {
-// 	int 	y;
-// 	int 	x;
-// 	int 	test_value;
-// 	int 	result;
-
-// 	x = 0;
-// 	y = 0;
-// 	test_value = 1;
-
-// 	if (!check(S))
-// 		return (0);
-// 	while (x < 9)
-// 	{
-// 		while (y < 9)
-// 		{
-// 			if (S.point[x][y] == 0 )
-// 			{
-// 				while (test_value != 9)
-// 				{
-// 					S.point[x][y] = test_value;
-// 					result += solver(S);
-// 					test_value++;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return (result);
-// }
-
-int		ft_is_valid(int sudoku_grid[9][9])
+struct coord
 {
-	// int is_valid;
+	int x;
+	int y;
+};
+int		ft_is_valid(struct coord idx, int sudoku_grid[9][9]);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 
-	// is_valid = 0;
-	// if (**sudoku_grid)
-	// 	return (1);
-	// return (1);
+int		ft_solver(int S[9][9], int max_search)
+{   /* Will return the number of solvable sudokus for one grid The input grid should ALWAYS be a VALID one !!! */
+	int		test_value;
+	int		result;
 	struct coord idx;
+
 	idx.x = 0;
 	idx.y = 0;
-	if (ft_check_3x3(idx, sudoku_grid) && ft_check_col(idx, sudoku_grid) && ft_check_row(idx, sudoku_grid))
-		return (1);
-	return (0);
+	test_value = 1;
+	result = 0;
+	while (idx.x < 9)
+	{
+		while (idx.y < 9)
+		{
+			if (S[idx.x][idx.y] == 0)
+			{
+				while (test_value != 9)
+				{
+					S[idx.x][idx.y] = test_value;
+					if (ft_is_valid(idx, S))
+					{
+						ft_putstr("is_valid_value working\n");
+						result += ft_solver(S, max_search);
+					}
+					if (result >= max_search)
+						return (result);
+					test_value++;
+				}
+				return (result);
+			}
+			idx.y++;
+		}
+		idx.x++;
+	}
+	return (1);
 }
+
+
