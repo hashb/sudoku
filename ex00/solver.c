@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:26:15 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 21:41:29 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ int 	main(int argc, char **argv)
 
 	ft_read_sudoku(sudoku_grid, argv);
 	result = solver(sudoku_grid, 2);
+	return (result);
 }
