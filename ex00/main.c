@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:30:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 19:46:55 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 20:05:12 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,22 @@ int		main(int argc, char **argv)
 		ft_putstr("Error\n");
 		return (1);
 	}
-	int **sudoku_grid;
-	sudoku_grid = ft_read_sudoku(argv);
-	int i = 0;
-	int j = 0;
-	while (i < 9)
-	{
-		j = 0;
-		while (j < 9)
-		{
-			printf("\t==>%i ", **sudoku_grid);
-			j++;
-		}
-		i++;
-		printf("\n");
-	}
+	int sudoku_grid[9][9];
+	ft_read_sudoku(sudoku_grid, argv);
+	// int i = 0;
+	// int j = 0;
+	// while (i < 9)
+	// {
+	// 	j = 0;
+	// 	printf("\t");
+	// 	while (j < 9)
+	// 	{
+	// 		printf("%i ", sudoku_grid[i][j]);
+	// 		j++;
+	// 	}
+	// 	i++;
+	// 	printf("\n");
+	// }
 
 	// if (!ft_is_valid(sudoku_grid))
 	// {
@@ -46,6 +47,6 @@ int		main(int argc, char **argv)
 	// 	return (1);
 	// }
 	// ft_solver(sudoku_grid);
-	// ft_print_sudoku(sudoku_grid);
+	ft_print_sudoku(sudoku_grid);
 	return (0);
 }

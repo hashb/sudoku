@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 18:22:35 by kchenna           #+#    #+#             */
-/*   Updated: 2018/09/29 19:47:01 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 20:05:31 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ft_putstr(char *str)
 	}
 }
 
-int		**ft_read_sudoku(char **argv);
+void	ft_read_sudoku(int sudoku_grid[9][9], char **argv);
 void	ft_print_line(int *line);
-void	ft_print_sudoku(int **sudoku_grid);
+void	ft_print_sudoku(int sudoku_grid[9][9]);
 
 #endif /* LIB_SUDOKU_H */

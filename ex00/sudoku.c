@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 19:48:08 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 20:06:25 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,31 @@
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 
-int		**ft_read_sudoku(char **argv)
+void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
 {
     int i;
     int j;
     char *str;
-    int **sudoku_grid = (int **)malloc(9 * sizeof(int *));
+    // int **sudoku_grid = (int **)malloc(9 * sizeof(int *));
 
     i = 1;
     while (i <= 9)
     {
         j = 0;
-        sudoku_grid[i] = (int *)malloc(sizeof(int) * 9);
+        // sudoku_grid[i] = (int *)malloc(sizeof(int) * 9);
         str = argv[i];
         while (*str)
         {
             if (*str == '.')
-                sudoku_grid[i][j] = 0;
+                sudoku_grid[i - 1][j] = 0;
             else
-                sudoku_grid[i][j] = *str - '0';
+                sudoku_grid[i - 1][j] = *str - '0';
             str++;
             j++;
         }
         i++;
     }
-    return (sudoku_grid);
+    // return (sudoku_grid);
 }
 
 void	ft_print_line(int *line)
@@ -53,13 +53,12 @@ void	ft_print_line(int *line)
         ft_putchar(line[i] + '0');
         if (i != 8)
             ft_putchar(' ');
-        ft_putchar('c');
         i++;
     }
     return ;
 }
 
-void	ft_print_sudoku(int **sudoku_grid)
+void	ft_print_sudoku(int sudoku_grid[9][9])
 {
     int i;
 
@@ -67,6 +66,7 @@ void	ft_print_sudoku(int **sudoku_grid)
     while (i < 9)
     {
         ft_print_line(sudoku_grid[i]);
+		ft_putchar('\n');
         i++;
     }
     return ;
