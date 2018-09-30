@@ -3,20 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smoissel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:30:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 11:36:24 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 17:32:50 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int 	
 
-int 	main(int arg c, char **argv)
+void 	ft_putchar(char c);
+
+
+
+int 	main(int argc, char **argv)
 {	
 	int 	count;
 
 	count = 0;
 	if (argc != 9 + 1)
 		return (0);
+	return (1);
+}
 
