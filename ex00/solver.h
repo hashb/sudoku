@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 21:45:20 by kchenna           #+#    #+#             */
-/*   Updated: 2018/09/29 22:45:25 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 23:35:27 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ struct coord
 	int y;
 };
 
-coord	ft_get_box_start(coord idx)
+struct coord	ft_get_box_start(struct coord idx)
 {
-	coord res;
+	struct coord res;
 
 	res.x = (int)idx.x/3 * 3;
 	res.y = (int)idx.y/3 * 3;
 	return (res);
 }
 
-int		ft_check_3x3(coord idx, int sudoku_grid[9][9])
+int		ft_check_3x3(struct coord idx, int sudoku_grid[9][9])
 {
 	int i;
 	int j;
 	int val;
-	coord idx_box;
+	struct coord idx_box;
 	int check[10];
 
 	i = 0;
@@ -46,18 +46,19 @@ int		ft_check_3x3(coord idx, int sudoku_grid[9][9])
 	{
 		while (j < 3)
 		{
-			val = sudoku_grid[i][j];
+			val = sudoku_grid[i][j++];
+			if (val == 0)
+				continue;
 			if (check[val] == -1)
 				return (0);
 			check[val] = -1;
-			j++;
 		}
 		i++;
 	}
 	return (1);
 }
 
-int		ft_check_row(coord idx, int sudoku_grid[9][9])
+int		ft_check_row(struct coord idx, int sudoku_grid[9][9])
 {
 	int i;
 	int j;
@@ -72,6 +73,8 @@ int		ft_check_row(coord idx, int sudoku_grid[9][9])
 	while (j < 9)
 	{
 		val = sudoku_grid[i][j];
+		if (val == 0)
+			continue;
 		if (check[val] == -1)
 			return (0);
 		check[val] = -1;
@@ -80,7 +83,7 @@ int		ft_check_row(coord idx, int sudoku_grid[9][9])
 	return (1);
 }
 
-int		ft_check_col(coord idx, int sudoku_grid[9][9])
+int		ft_check_col(struct coord idx, int sudoku_grid[9][9])
 {
 	int i;
 	int j;

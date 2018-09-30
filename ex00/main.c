@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:30:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 22:42:38 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/29 23:19:58 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ int		main(int argc, char **argv)
 		return (1);
 	}
 	ft_read_sudoku(sudoku_grid, argv);
-	if (!ft_is_valid(sudoku_grid))
-	{
-		ft_putstr("Error Sudoku is not valid\n");
-		return (1);
-	}
-	if (ft_solver(sudoku_grid))
+	// if (!ft_is_valid(sudoku_grid))
+	// {
+	// 	ft_putstr("Error Sudoku is not valid\n");
+	// 	return (1);
+	// }
+	// if (ft_solver(sudoku_grid))
 		ft_print_sudoku(sudoku_grid);
-	else
-	{
-		ft_putstr("Error\n");
-		return (1);
-	}
+	// else
+	// {
+	// 	ft_putstr("Error\n");
+	// 	return (1);
+	// }
 	return (0);
 }
