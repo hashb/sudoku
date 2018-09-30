@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 19:25:15 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 19:33:32 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,24 @@ int 	solver(struct Sudoku S)
 
 	x = 0;
 	y = 0;
-	test_value = 1;
+	test_value = 0;
 	while (x <= 9)
 	{
 		while (y <= 9)
 		{
 			if (S.point[x][y] == -1 )
 			{	
-				while(!check(S, x, y, test_value))
+				while (test_value != 9)
+				{	
 					test_value++;
-				S.point[x][y] = test_value;
-				if (solver(S))
-					result++;
+					while(!check(S, x, y, test_value))
+					test_value++;
+					S.point[x][y] = test_value;
+					if (solver(S))
+					{
+						result++;	
+					}
+				}
 			}
 		}
 	}
