@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-int		ft_solver(int S[9][9], int max_search);
+int		ft_solver(int sudoku_grid[9][9]);
 
 void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
 {
@@ -87,7 +87,7 @@ int		main(int argc, char **argv)
 		ft_putstr("Error Sudoku is not valid\n");
 		return (1);
 	}
-	if (ft_solver(sudoku_grid, 2))
+	if (ft_solver(sudoku_grid))
 		ft_print_sudoku(sudoku_grid);
 	else
 	{
