@@ -6,13 +6,13 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:08:49 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 21:20:47 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
 
-int 	solver(struct Sudoku S, int max_search)
+int 	solver(int S[9][9], int max_search)
 {	/* Will return the number of solvable sudokus for one grid */
 	int 	y;
 	int 	x;
@@ -29,11 +29,11 @@ int 	solver(struct Sudoku S, int max_search)
 	{
 		while (y < 9)
 		{
-			if (S.point[x][y] == 0 )
+			if (S[x][y] == 0 )
 			{	
 				while (test_value != 9)
 				{
-					S.point[x][y] = test_value;
+					S[x][y] = test_value;
 					result += solver(S, max_search);
 					if (result >= max_search)
 						return (result);
@@ -45,7 +45,39 @@ int 	solver(struct Sudoku S, int max_search)
 	}
 	return (result);
 }
-int 	check(struct Sudoku S)
+int 	check(int S[9][9])
 {
 	return (0);
+}
+
+void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
+{
+    int i;
+    int j;
+    char *str;
+
+    i = 1;
+    while (i <= 9)
+    {
+        j = 0;
+        str = argv[i];
+        while (*str)
+        {
+            if (*str == '.')
+                sudoku_grid[i - 1][j] = 0;
+            else
+                sudoku_grid[i - 1][j] = *str - '0';
+            str++;
+            j++;
+        }
+        i++;
+    }
+}
+int 	main(int argc, char **argv)
+{
+	int 	sudoku_grid[9][9];
+	int 	result;
+
+	ft_read_sudoku(sudoku_grid, argv);
+	result = solver(sudoku_grid, 2);
 }
