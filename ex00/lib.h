@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 17:33:17 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 18:08:51 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 18:25:22 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		*ft_strdup(char *src)
 
 struct Sudoku
 {	/* It contains the current value for each case. */
-	int 	x[9][9];
+	int 	point[9][9];
 };
 
 typedef struct	s_stock_par
