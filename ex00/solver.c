@@ -56,10 +56,7 @@ int		ft_solver(int sudoku_grid[9][9])
 	i = 1;
 	while (i <= 9)
 	{
-
 		sudoku_grid[idx.x][idx.y] = i;
-		ft_print_sudoku(sudoku_grid);
-		ft_putchar('\n');
 		if (ft_is_valid(idx, sudoku_grid) 
 			&& ft_solver(sudoku_grid))
 			return (1);
