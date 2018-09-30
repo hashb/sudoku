@@ -6,11 +6,17 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 21:20:47 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 21:26:15 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib.h"
+#include <stdlib.h>
+
+int 	check(int S[9][9])
+{
+	return (0);
+}
 
 int 	solver(int S[9][9], int max_search)
 {	/* Will return the number of solvable sudokus for one grid */
@@ -44,10 +50,6 @@ int 	solver(int S[9][9], int max_search)
 		}
 	}
 	return (result);
-}
-int 	check(int S[9][9])
-{
-	return (0);
 }
 
 void	ft_read_sudoku(int sudoku_grid[9][9], char **argv)
