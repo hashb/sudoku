@@ -6,14 +6,11 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:30:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 17:32:50 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 17:49:12 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-void 	ft_putchar(char c);
-
-
+#include "lib.h"
 
 int 	main(int argc, char **argv)
 {	
@@ -23,5 +20,8 @@ int 	main(int argc, char **argv)
 	if (argc != 9 + 1)
 		return (0);
 	return (1);
+
+	
+	
 }
 

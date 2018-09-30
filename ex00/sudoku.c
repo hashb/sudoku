@@ -6,15 +6,12 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 17:37:13 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 17:48:24 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-struct Sudoku
-{	/* It contains the current value for each case. */
-	int 	x[9][9];
-};
+
 
 int 	is_valide_line(char *ligneN)
 {
