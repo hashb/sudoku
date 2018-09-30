@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:05:26 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/30 13:14:16 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/30 16:17:57 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,32 @@ void					ft_print_sudoku(int sudoku_grid[9][9])
 	return ;
 }
 
+int						ft_is_all_valid(int sudoku_grid[9][9])
+{
+	int					i;
+	int					j;
+	struct s_coord		idx;
+
+	i = 0;
+	while (i < 9)
+	{
+		j = 0;
+		while (j < 9)
+		{
+			idx.x = i;
+			idx.y = j;
+			if (!ft_is_valid(idx, sudoku_grid))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int						main(int argc, char **argv)
 {
 	int					sudoku_grid[9][9];
-	struct s_coord		idx;
 
 	if (argc != 10)
 	{
@@ -76,14 +98,12 @@ int						main(int argc, char **argv)
 		return (1);
 	}
 	ft_read_sudoku(sudoku_grid, argv);
-	idx.x = 0;
-	idx.y = 0;
-	if (!ft_is_valid(idx, sudoku_grid))
+	if (!ft_is_all_valid(sudoku_grid))
 	{
 		ft_putstr("Error\n");
 		return (1);
 	}
-	if (ft_solver(sudoku_grid))
+	if (ft_solver(sudoku_grid) && ft_is_all_valid(sudoku_grid))
 		ft_print_sudoku(sudoku_grid);
 	else
 	{

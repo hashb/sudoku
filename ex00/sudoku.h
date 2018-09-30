@@ -6,7 +6,7 @@
 /*   By: kchenna <kchenna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 18:22:35 by kchenna           #+#    #+#             */
-/*   Updated: 2018/09/30 12:50:26 by kchenna          ###   ########.fr       */
+/*   Updated: 2018/09/30 16:11:32 by kchenna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void				ft_read_sudoku(int sudoku_grid[9][9], char **argv);
 void				ft_print_line(int *line);
 void				ft_print_sudoku(int sudoku_grid[9][9]);
 int					ft_is_valid(struct s_coord idx, int sudoku_grid[9][9]);
+int					ft_is_all_valid(int sudoku_grid[9][9]);
 struct s_coord		ft_get_box_start(struct s_coord idx);
 #endif
