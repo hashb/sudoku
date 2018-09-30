@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 17:33:17 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 18:25:22 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 21:10:26 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ t_stock_par	*ft_param_to_tab(int ac, char **av)
 		params[index].size_param = ft_strlen(av[index]);
 		params[index].str = av[index];
 		params[index].copy = ft_strdup(av[index]);
-		params[index].tab = ft_split_whitespaces(av[index]);
 		++index;
 	}
 	params[index].str = 0;
