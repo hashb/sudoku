@@ -6,7 +6,7 @@
 /*   By: smoissel <smoissel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/29 11:19:58 by smoissel          #+#    #+#             */
-/*   Updated: 2018/09/29 18:26:05 by smoissel         ###   ########.fr       */
+/*   Updated: 2018/09/29 19:25:15 by smoissel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,29 @@ int 	solver(struct Sudoku S)
 {	
 	int 	count_x;
 	int 	y;
+	int 	x;
+	int 	test_value;
+	int 	result;
 
 	x = 0;
 	y = 0;
-
+	test_value = 1;
 	while (x <= 9)
 	{
 		while (y <= 9)
 		{
-			if (S.point[x][y] == '.')
-			{
-				
+			if (S.point[x][y] == -1 )
+			{	
+				while(!check(S, x, y, test_value))
+					test_value++;
+				S.point[x][y] = test_value;
+				if (solver(S))
+					result++;
 			}
 		}
 	}
 	/* Should print the final sudoku and return the number of possible solutions. */
-	return 0;
+	return (0);
 }
 
 int 	is_valide(struct Sudoku S)
